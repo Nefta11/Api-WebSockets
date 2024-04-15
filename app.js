@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import { config } from "dotenv";
 config()
-import clothesRouter from './routes/listas.routes.js'
+//import clothesRouter from './routes/listas.routes.js'
 const app = express();
 
 //Cargar archivos estaticos 
@@ -18,6 +18,6 @@ app.use(morgan('dev'));
 app.use(express.static('src'));
 
 
-app.use(clothesRouter);
+//app.use(clothesRouter);
 
 export default app;
