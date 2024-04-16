@@ -17,7 +17,7 @@ ListaDAO.insertLista = async (lista) => {
     return true;
 }
 
-ListaDAO.updateClothe = async (cd, lista) => {
+ListaDAO.updateLista = async (cd, lista) => {
     const listaUpdated = await Lista.findOneAndUpdate({ code: cd  }, lista, { new: true });
     if (listaUpdated != null)
         return true;

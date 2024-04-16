@@ -54,7 +54,7 @@ export const updateLista = (req, res) => {
 
 
 export const deleteLista = (req, res) => {
-    ClotheDAO.deleteLista(req.params.code)
+    ListaDAO.deleteLista(req.params.code)
 
         .then(lista => {
             if (lista)
