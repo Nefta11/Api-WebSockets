@@ -11,7 +11,7 @@ ListaDAO.getOne = async (cd) => {
     return lista
 };
 
-ListaDAO.insertClothe = async (lista) => {
+ListaDAO.insertLista = async (lista) => {
     const listaSaved = new Lista(lista);
     listaSaved.save();
     return true;
