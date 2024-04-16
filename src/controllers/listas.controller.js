@@ -1,11 +1,11 @@
 import { model } from 'mongoose';
-import ClotheDAO from '../dao/clothes.dao.js'
+import ListaDAO from '../dao/listas.dao.js'
 
 //Nos muestra todos los elementos disponibles en la BD
 export const getAll = (req, res) => {
-    ClotheDAO.getAll()
-        .then((clothes) => {
-            res.json(clothes);
+    ListaDAO.getAll()
+        .then((listas) => {
+            res.json(listas);
         })
         .catch((err) => {
             res.json(err);
@@ -13,19 +13,19 @@ export const getAll = (req, res) => {
 };
 
 export const getOne = (req, res) => {
-    ClotheDAO.getOne(req.params.code)
-        .then((clothe) => {
-            if (clothe != null)
-            res.json(clothe);
+    ListaDAO.getOne(req.params.code)
+        .then((lista) => {
+            if (lista != null)
+            res.json(lista);
             else
-                res.json({ status: "Product not found" })
+                res.json({ status: "List not found" })
         })
         .catch(err => res.json({ status: "Server unaivalible",message:err }))
 }
 
 //Nos muestra todos los elementos disponibles en la BD
-export const insertClothe = (req, res) => {
-    ClotheDAO.insertClothe(req.body)
+export const insertLista = (req, res) => {
+    ListaDAO.insertLista(req.body)
         .then(result => {
             if (result)
             res.json(result);
@@ -34,12 +34,12 @@ export const insertClothe = (req, res) => {
 };
 
 
-export const updateClothe = (req, res) => {
-    ClotheDAO.updateClothe(req.params.code, req.body)
+export const updateLista = (req, res) => {
+    ListaDAO.updateLista(req.params.code, req.body)
 
-        .then(product => {
-            if (product)
-            res.json(product);
+        .then(lista => {
+            if (lista)
+            res.json(lista);
                 else
                 res.json({
                     status: "server unavailable"
@@ -53,12 +53,12 @@ export const updateClothe = (req, res) => {
 };
 
 
-export const deleteClothe = (req, res) => {
-    ClotheDAO.deleteClothe(req.params.code)
+export const deleteLista = (req, res) => {
+    ClotheDAO.deleteLista(req.params.code)
 
-        .then(clothe => {
-            if (clothe)
-            res.json(clothe);
+        .then(lista => {
+            if (lista)
+            res.json(lista);
                 else
                 res.json({
                     status: "server unavailable"
