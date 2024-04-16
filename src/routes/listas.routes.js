@@ -3,7 +3,6 @@ import { getAll, insertLista, getOne, updateLista, deleteLista } from '../contro
 
 const router = Router();
 
-// Rutas sin un prefijo específico
 router.get('/', getAll);
 router.get('/:code', getOne);
 router.post('/', insertLista);
