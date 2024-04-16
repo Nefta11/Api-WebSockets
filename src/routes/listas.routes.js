@@ -1,13 +1,13 @@
 import { Router } from "express";
-import { getAll, insertClothe, getOne, updateClothe, deleteClothe } from '../controllers/clothes.controller.js';
+import { getAll, insertLista, getOne, updateLista, deleteLista } from '../controllers/listas.controller.js';
 
 const router = Router();
 
 // Rutas sin un prefijo específico
 router.get('/', getAll);
 router.get('/:code', getOne);
-router.post('/', insertClothe);
-router.put('/:code', updateClothe);
-router.delete('/De/:code', deleteClothe);
+router.post('/', insertLista);
+router.put('/:code', updateLista);
+router.delete('/De/:code', deleteLista);
 
 export default router;
