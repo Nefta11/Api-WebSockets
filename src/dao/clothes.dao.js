@@ -1,23 +1,23 @@
-import Clothe from '../models/listas.model.js'
-const ClotheDAO = {}
+import Lista from '../models/listas.model.js'
+const ListaDAO = {}
 
-ClotheDAO.getAll = async () => {
+ListaDAO.getAll = async () => {
     const clothes = await Clothe.find();
     return clothes;
 }
 
-ClotheDAO.getOne = async (cd) => {
+ListaDAO.getOne = async (cd) => {
     const clothe = await Clothe.findOne({ code: cd });
     return clothe
 };
 
-ClotheDAO.insertClothe = async (clothe) => {
+ListaDAO.insertClothe = async (clothe) => {
     const clotheSaved = new Clothe(clothe);
     clotheSaved.save();
     return true;
 }
 
-ClotheDAO.updateClothe = async (cd, clothe) => {
+ListaDAO.updateClothe = async (cd, clothe) => {
     const clotheUpdated = await Clothe.findOneAndUpdate({ code: cd  }, clothe, { new: true });
     if (clotheUpdated != null)
         return true;
@@ -26,7 +26,7 @@ ClotheDAO.updateClothe = async (cd, clothe) => {
 }
 
 
-ClotheDAO.deleteClothe = async (cd) => {
+ListaDAO.deleteClothe = async (cd) => {
     const clotheDeleted = await Clothe.findOneAndDelete({ code: cd  });
     if (clotheDeleted != null)
         return true;
@@ -34,4 +34,4 @@ ClotheDAO.deleteClothe = async (cd) => {
         return false;
 }
 
-export default ClotheDAO;
+export default ListaDAO;
