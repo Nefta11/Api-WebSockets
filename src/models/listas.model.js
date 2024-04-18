@@ -11,6 +11,7 @@ const listasSchema = new Schema(
     TemperaturaActual: Number,
     objetoDetectado: String,
     DistanciaObjeto: Number,
+    EstatusLed: String
   },
   {
     versionKey: false,
